@@ -39,4 +39,17 @@ II. Apps, URL's and templates:-
     from django.http import HttpResponse and return return HttpResponse('<h1>Hello world</h1>') (Hello world is a sample text)
 19. Now add the URL pattern for the main page in the urls.py file in 'jkre' directory.
     Add the path for home page (pages) as empty and include pages.urls (including urls.py) (Note: import include from django.urls)
-    
+20. Now to add the templates, go to settings.py -> 'TEMPLATES' and add the following command to tell python on where to look for, for the templates
+    'DIRS': [os.path.join(BASE_DIR, 'templates')],
+21. Create a folder 'templates' in the root directory 'jkre_project' and create a subfolder in templates called 'pages'.
+    In the subfolder pages, create index.html and about.html for index and about pages.
+22. Now add url path for 'about' page in pages -> urls.py by the following command,
+    path('about', views.about, name='about'),
+23. Now add the method for the about page and change for index page in views.py file.
+    def about(request):
+    return render(request, 'pages/about(or index).html') 
+24. To establish a base layout, create base.html under templates directory use 'Jinja template' (Installable as extension in VS code)
+    To extend the base template layout to other html pages(index,about)
+    a. Add {% block content %}{% endblock %} in the body of base.html
+    b. Add {% extends 'base.html' %}{% block content %} "*Content of that page*" {% endblock %}
+25. 
