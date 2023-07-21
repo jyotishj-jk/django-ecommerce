@@ -59,4 +59,11 @@ II. Apps, URL's and templates:-
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'jkre/static')]
 27. manage.py has an inbuilt 'collectstatic' package to collect these static files. This will create a static directory in the root directory.
     python manage.py collectstatic
-28. 
+28. Add the style sheet and scripts link (href) to the base.html file.
+29. To invoke the sheets and scripts in static folder, do the following
+    a. Add '{% load static %}' to invoke static files
+    b. In place of the href and src calls add like href="{% static 'css/all.css' %}" instead of href="static/css/all.css"
+30. Instead of cluttering our base.html file with markup, we can use partials. Create 'partials' folder in templates.
+    Add _navbar.html, _topbar.html and _footer.html and add those files in base.html like below
+    {% include 'partials/_topbar.html' %}
+    (NOTE: Also load static in these partial files if there are any calls for static files, ex:logo.jpg)
