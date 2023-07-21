@@ -52,4 +52,11 @@ II. Apps, URL's and templates:-
     To extend the base template layout to other html pages(index,about)
     a. Add {% block content %}{% endblock %} in the body of base.html
     b. Add {% extends 'base.html' %}{% block content %} "*Content of that page*" {% endblock %}
-25. 
+25. Create a 'static' folder under 'jkre' containng the static images, css, js and webfont files.
+26. In settings.py in 'jkre', add the following to add the static directory to the code
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_URL = 'static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'jkre/static')]
+27. manage.py has an inbuilt 'collectstatic' package to collect these static files. This will create a static directory in the root directory.
+    python manage.py collectstatic
+28. 
