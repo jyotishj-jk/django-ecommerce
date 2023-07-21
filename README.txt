@@ -26,3 +26,4 @@ I. Setting up the project :-
 13. In the file jkre -> settings.py, under 'INSTALLED_APPS=' add the below for django to recognise the 'pages' as an app.
     'pages.apps.PagesConfig', (PagesConfig from pages -> apps.py)
 14. Under the pages directory, create urls.py file
+
