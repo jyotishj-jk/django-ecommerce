@@ -21,9 +21,22 @@ I. Setting up the project :-
     python manage.py runserver
 11. To check if the server is up and running go to browser and open http://127.0.0.1:8000/ or http://localhost:8000/
     Note: Leave one terminal for the running server and open a new terminal
+
+II. Apps, URL's and templates:-
+
 12. Use the below command to create the pages app,
     python manage.py startapp pages
 13. In the file jkre -> settings.py, under 'INSTALLED_APPS=' add the below for django to recognise the 'pages' as an app.
     'pages.apps.PagesConfig', (PagesConfig from pages -> apps.py)
 14. Under the pages directory, create urls.py file
-
+15. In the urls.py file, import path to define path of the url from django file using the following command,
+    from django.urls import path
+16. To bring in the views file and to specify the working of the pages when the url is being called, in urls.py import views
+    from . import views (. refers all)
+17. In the urls file, add url pattern with an empty path (since this is the root path or the home page)
+    We are connecting this to the 'index' method in views and set the name of this URL as 'index'.
+18. Now add 'index' member in the views.py by defining a function 'index' taking a 'request' as an argument.
+    from django.http import HttpResponse and return return HttpResponse('<h1>Hello world</h1>') (Hello world is a sample text)
+19. Now add the URL pattern for the main page in the urls.py file in 'jkre' directory.
+    Add the path for home page (pages) as empty and include pages.urls (including urls.py) (Note: import include from django.urls)
+    
