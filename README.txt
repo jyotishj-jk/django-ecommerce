@@ -21,4 +21,8 @@ I. Setting up the project :-
     python manage.py runserver
 11. To check if the server is up and running go to browser and open http://127.0.0.1:8000/ or http://localhost:8000/
     Note: Leave one terminal for the running server and open a new terminal
-12. Summa Line add panni papom
+12. Use the below command to create the pages app,
+    python manage.py startapp pages
+13. In the file jkre -> settings.py, under 'INSTALLED_APPS=' add the below for django to recognise the 'pages' as an app.
+    'pages.apps.PagesConfig', (PagesConfig from pages -> apps.py)
+14. Under the pages directory, create urls.py file
