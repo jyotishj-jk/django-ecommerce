@@ -94,4 +94,4 @@ II. Apps, URL's and templates:-
 40. To make the 'Featured Listings' in nav bar point to lsiting app, change the pointing link in navbar.html like below,
     <a class="nav-link" href="{% url 'listings' %}">Featured Listings</a>
     And to add the highlighting of the active page, do similar to home and about in navbar.html itself.
-    Listing URL's and template
+
