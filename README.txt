@@ -67,3 +67,31 @@ II. Apps, URL's and templates:-
     Add _navbar.html, _topbar.html and _footer.html and add those files in base.html like below
     {% include 'partials/_topbar.html' %}
     (NOTE: Also load static in these partial files if there are any calls for static files, ex:logo.jpg)
+31. If u want the active page to be highlighted dynamically, use if statement as given below,
+    {% if '/' == request.path %}
+        class="nav-item active mr-3"
+    {% else %}
+        class="nav-item mr-3"
+    {% endif %}
+32. Now create the 'listings' and 'realtors' app using 'python manage.py startapp listings/realtors'
+33. Now create folders and html files for 'listings' under template directory.
+34. Create a urls.py file in 'listings' directory and make that file like that of the urls file of 'pages'
+    urlpatterns = [
+    path('', views.index, name='listings'), #For listings
+    path('<int:listing_id>', views.listing, name='about'), #For singular listings with id
+    path('search', views.search, name='search'), #For search in listings
+]
+35. Now include the listings url in the main urls.py file using the below cmd,
+    path('listing/', include('listings.urls')),
+36. Add the listings and realtors page config in the settings file in INSTALLED_APPS by adding the cmd below,
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
+37. Create the view methods in the listings->views.py for the urls index(listings), listing and search.
+38. Add the HTML code for listing,listings and search.html and extend the base.html to these files
+39. If you click on the home when you are in listings page, you should be redirected back to the home page.
+    For this, in the breadcrumb part of lisitings.html change the index part like below,
+    <a href="{% url 'index' %}">
+40. To make the 'Featured Listings' in nav bar point to lsiting app, change the pointing link in navbar.html like below,
+    <a class="nav-link" href="{% url 'listings' %}">Featured Listings</a>
+    And to add the highlighting of the active page, do similar to home and about in navbar.html itself.
+    Listing URL's and template
