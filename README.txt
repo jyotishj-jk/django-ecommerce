@@ -112,5 +112,6 @@ III. Modules, migrations and admin
 4. If your database doesn't exist yet, migrate creates all the necessary tables to match your model definitions.
    Otherwise if the database already exists, migrate updates the existing table definitions to match the model definitions. cmd is,
     python manage.py migrate
-5. 
+5. To create the model for Listings, go to models.py in Listings directory and create a class 'Listing' and in that we create all the necessary properties.
+6. 
 
