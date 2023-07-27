@@ -113,5 +113,11 @@ III. Modules, migrations and admin
    Otherwise if the database already exists, migrate updates the existing table definitions to match the model definitions. cmd is,
     python manage.py migrate
 5. To create the model for Listings, go to models.py in Listings directory and create a class 'Listing' and in that we create all the necessary properties.
-6. 
+6. Similarly, create the models for realtors as well.
+7. Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema.
+    To do so, run the command 'python manage.py makemigrations'
+    NOTE: Before proceeding to migration, install Pillow (pip install Pillow)
+8. Now to add the tables, run the command,
+    python manage.py migrate
+9. 
 
