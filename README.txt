@@ -119,5 +119,18 @@ III. Modules, migrations and admin
     NOTE: Before proceeding to migration, install Pillow (pip install Pillow)
 8. Now to add the tables, run the command,
     python manage.py migrate
-9. 
+9. Create super user access for the 'admin' page of the website using the cmd.
+    python manage.py createsuperuser
+    NOTE: User: jyotish, email: jkre@gmail.com, pwd: 123456.
+10. Now go into the URL http://127.0.0.1:8000/admin/ and enter your credentials (mentiioned above) to access the admin page.
+11. To add "Listings" and "Realtors" in the admin page, go to admin.py, import Listing/Realtor from '.models' and add the following command
+    admin.site.register(Listing/Realtor)
+12. Now, we can add the listings and the realtors from the admin page.
+13. To create a media directory to store media files, go to jkre-> settings.py and enter the following command (like creating dir for static files)
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = 'media/'
+14. For the media files to show up in front end, go to jkre ->urls.py and add the following next to urlpatterns
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    NOTE: Import settings and static in urls.py since it is being used
+15. Add the data for realtors and listings in the admin page.
 
