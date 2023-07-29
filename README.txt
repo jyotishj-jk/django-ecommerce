@@ -149,6 +149,13 @@ III. Modules, migrations and admin
     and to add list per view add 'list_per_page = 25' in the ListingAdmin class.
 
 IV. View methods, display and Search
-1. 
-
-
+1. To pull the data from listings model (db), go to listings->views.py and do the following steps,
+    a. Import .models from listing
+    b. In the index func, fetch the listings from the db using 'listings=Listing.objects.all()'
+    c. Create a context dictionary and pass the lisitings into dictionary.
+    d. Now in return, pass the dictionary as an argument.
+    e. To pass the listings model without any error in the views.py, install 'pip install pylint-django'
+    f.
+2. In listings.html, add a static if else query above the listings html content
+3. If the 'if' statement passes through, create a for loop, '{% for listing in listings %}' and pass the basic html for one listing in it.
+4. 
