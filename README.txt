@@ -133,4 +133,10 @@ III. Modules, migrations and admin
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     NOTE: Import settings and static in urls.py since it is being used
 15. Add the data for realtors and listings in the admin page.
+16. To modify the admin page, create a folder 'admin' in the templates directory.
+17. Create a file 'base_site.html' and add the following cmd in that file to extend the template of the pre-existing admin page.
+    {% extends 'admin/base.html' %}
+18. Load static as well since we need to involve static files.
+19. To override the specific part of the template use '{% block branding %}' and '{% endblock %}' and add the changes to be done inside that.
+20. 
 
