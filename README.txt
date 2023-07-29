@@ -138,5 +138,17 @@ III. Modules, migrations and admin
     {% extends 'admin/base.html' %}
 18. Load static as well since we need to involve static files.
 19. To override the specific part of the template use '{% block branding %}' and '{% endblock %}' and add the changes to be done inside that.
-20. 
+20. For the Admin->Listiings(overview page) to show more dettails, to add that we need to do the following,
+    a. Go to listings->admin.py and add a class LisitngAdming and mention the data that want to be shown as overview.
+    b. Also in the 'admin.site.register' pass the ListingAdmin as an argument.
+21. To enable to show detailed info if we click on the title of that listing in this overview page,
+    Add 'list_display_links = ('id', 'title')' in the ListingAdmin class.
+22. To add a filter box for the realtors, add 'list_filter = ('realtor',)' in the ListingAdmin class.
+23. To make the 'is_publishable' editable, add 'list_editable = ('is_published',)' in the ListingAdmin class.
+24. To include a search field in the same, add search_fields = ('title', 'description', 'address', 'city', 'state', 'zipcode', 'price')
+    and to add list per view add 'list_per_page = 25' in the ListingAdmin class.
+
+IV. View methods, display and Search
+1. 
+
 
