@@ -158,4 +158,10 @@ IV. View methods, display and Search
     f.
 2. In listings.html, add a static if else query above the listings html content
 3. If the 'if' statement passes through, create a for loop, '{% for listing in listings %}' and pass the basic html for one listing in it.
-4. 
+4. Now, we need to change the listings.html to display dynamic values from the DB.
+    Eg: Instead of <h4>12, Mapplewood</h4>, we need to add <h4>{{ listing.title }}</h4>
+5. To introduce comma in price, do the following steps,
+    a. In listings->settings.py under INSTALLED_APPS add 'django.contrib.humanize'
+    b. In listings.html, load humanize ({% load humanize %})
+    c. Now, include in the price as, {{ listing.price|intcomma }}
+6. 

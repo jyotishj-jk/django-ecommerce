@@ -9,7 +9,7 @@ def index(request):
     }
     return render(request, 'listings/listings.html', context) # Passing the dictionary as an argument
 
-def listing(request):
+def listing(request, listing_id):
     return render(request, 'listings/listing.html')
 
 def search(request):
