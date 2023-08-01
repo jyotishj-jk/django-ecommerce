@@ -164,4 +164,18 @@ IV. View methods, display and Search
     a. In listings->settings.py under INSTALLED_APPS add 'django.contrib.humanize'
     b. In listings.html, load humanize ({% load humanize %})
     c. Now, include in the price as, {{ listing.price|intcomma }}
-6. 
+6. Pagination is the process of dividing a document into discrete pages. This is achived in listings page by below steps in views.py
+    a. from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+    b. In index func, add the following,
+    paginator = Paginator(listings, 3)
+    page_number = request.GET.get("page")
+    paged_listings = paginator.get_page(page_number)
+    c. In the context, change to 'listings' : paged_listings'
+7. In order for the paging to reflect in the listings page, add the following in listings.html,
+    a. Add an if else loop to go into pagenation if there are extra pages
+    b. Add an if else loop for navigating to previous page
+    c. Add a for loop to dynamically show the current page
+    d. Add an if else loop for navigating to the next page.
+8. To order the listings by list date and to remove unpublished listings, add the following in listings->views.py,
+    listings=Listing.objects.order_by('-list_date').filter(is_published=True)
+9. 
