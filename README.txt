@@ -178,4 +178,20 @@ IV. View methods, display and Search
     d. Add an if else loop for navigating to the next page.
 8. To order the listings by list date and to remove unpublished listings, add the following in listings->views.py,
     listings=Listing.objects.order_by('-list_date').filter(is_published=True)
-9. 
+9. Now to make the home and index page as a dynamic content, go to views.py in pages and make the following changes.
+10. In the index request function add 'listings = Listing.objects.order_by('list_date').filter(is_published=True)[:3]' to display the latest three displays.
+11. Not go to index.html and add an if else loop to show the listings
+12. If the if loop passes through, add a for loop to dynamically list the listings.
+13. Load humanize to show the comma as intended for the prize.
+14. Now change the contents dynamically, Eg: Realtor: {{listing.realtor}}
+15. To make the about page dynamic as well, go to pages->views.py and change the about function similar to what we did for listings above.
+16. In the same func., to show mvp, add the following,
+    mvp_realtor = Realtor.objects.filter.all().filter(is_mvp=True)
+    context = {'realtors': realtors,
+        'mvp_realtors': mvp_realtor} and pass the context as return argument.
+17. Now in the about.html, make the changes accordingly to dynamically display the realtors as we did for listings.
+18. Now to show the mvp, in the abov.html do the following chages,
+    a. Pass an if else loop to check if there is an mvp.
+    b. Add a for loop and check for the mvp (to display multiple mvp) and dynamically change the required fields.
+
+
