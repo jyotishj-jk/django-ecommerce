@@ -196,6 +196,14 @@ IV. View methods, display and Search
 19. To build the single listiing page, open listing.html and extend base.html in it and create a block and put the html body in it.
 20. In  listings->views.py, add listing and listing id to the context and pass it and the url.
 21. Now change the fields to dynamic values. Add an if loop for the listings photos to be skipped if they are not present.
-22. 
+22. Now, to make the search form in home page active, we are going to make the option values in a seperate python file and import them into index.html.
+    In the seperate choices.p file, make the options into dictionary values.
+23. Add a for loop in index.html for the choices to read all the keys and values in choices file.
+24. Now to handle the submit form, make the search.html and channge the form action as follows,
+    <form action="{% url 'search' %}"> which will point to search.html
+25. To make the form responsive in search page,
+    Import the choices in listings->views.py as well (since search would again show listings from listings.html)
+26. In the breadcrumb, point the urls to index(for home) and for listings(for listings)
+
 
 
