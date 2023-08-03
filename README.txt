@@ -193,5 +193,9 @@ IV. View methods, display and Search
 18. Now to show the mvp, in the abov.html do the following chages,
     a. Pass an if else loop to check if there is an mvp.
     b. Add a for loop and check for the mvp (to display multiple mvp) and dynamically change the required fields.
+19. To build the single listiing page, open listing.html and extend base.html in it and create a block and put the html body in it.
+20. In  listings->views.py, add listing and listing id to the context and pass it and the url.
+21. Now change the fields to dynamic values. Add an if loop for the listings photos to be skipped if they are not present.
+22. 
 
 
