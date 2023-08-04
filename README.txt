@@ -204,6 +204,8 @@ IV. View methods, display and Search
 25. To make the form responsive in search page,
     Import the choices in listings->views.py as well (since search would again show listings from listings.html)
 26. In the breadcrumb, point the urls to index(for home) and for listings(for listings)
-
+27. For the search form filtering, first create a query set listing in the search funtion in listiings->views.py and get the listings.
+28. Copy paste the if,else and foor loops for the listings in listings.html to search.html
+29. Starting with searching for keywords (for search) and got to listings->views.py
 
 
