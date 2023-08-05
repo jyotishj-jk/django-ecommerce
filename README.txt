@@ -205,7 +205,12 @@ IV. View methods, display and Search
     Import the choices in listings->views.py as well (since search would again show listings from listings.html)
 26. In the breadcrumb, point the urls to index(for home) and for listings(for listings)
 27. For the search form filtering, first create a query set listing in the search funtion in listiings->views.py and get the listings.
-28. Copy paste the if,else and foor loops for the listings in listings.html to search.html
-29. Starting with searching for keywords (for search) and got to listings->views.py
+    a.Copy paste the if,else and foor loops for the listings in listings.html to search.html
+    b.Starting with searching for keywords (for search) and got to listings->views.py
+    c. The request made in search is got and checked if there are keywords using if loop
+    d. Use 'description__icontains=keywords' and filter out if any of the keywords match anywhere with the description.
+    e. To get the exact match for city, use 'description__iexact=city'
+    f. Use filtering (bedrooms__lte=bedrooms) to show bedrooms less than or equal to the mentioned one and do for all items
+28. 
 
 
