@@ -211,6 +211,10 @@ IV. View methods, display and Search
     d. Use 'description__icontains=keywords' and filter out if any of the keywords match anywhere with the description.
     e. To get the exact match for city, use 'description__iexact=city'
     f. Use filtering (bedrooms__lte=bedrooms) to show bedrooms less than or equal to the mentioned one and do for all items
-28. 
+28. To preserve the form input even after obtaining the search result,
+    a. Goto listings->views.py and add 'values': request.GET to the context.
+    b. Now in the input in the form for keywords, add an attirbute value like, value="{{value.keywords}}" which will preserve that value.
+    c. For scroll down options, use if statement to check if key = values.state and if so, it is 'selected' as the option.
+    d. 
 
 
