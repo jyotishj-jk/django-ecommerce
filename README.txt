@@ -225,5 +225,9 @@ V. Accounts and authentication
 5. Go to jkre->urls.py to add accounts url and the file it should point to.
 6. Go to partials->navbar.html to point the register and login to correct urls like {% url 'register' % }
 7. Now add if else loop in navbar.html to hightlight register/login if the request is in that path (if they are in that page).
-
+8. Now, import the content (html body) for register and login pages and extend base.html
+9. Change the form action to "{% url 'register/login' %}" and add method as "POST" to post the data in register/login.html
+10. When a post request is used in a form, we need to use a CSRF token (security precaution). To do so, add {% csrf_token %} beneath the form tag.
+11. To identify if the form request is 'post' or 'get', add if loop in the register and login methods in views.py.
+12. 
 
