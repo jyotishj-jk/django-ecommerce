@@ -215,6 +215,15 @@ IV. View methods, display and Search
     a. Goto listings->views.py and add 'values': request.GET to the context.
     b. Now in the input in the form for keywords, add an attirbute value like, value="{{value.keywords}}" which will preserve that value.
     c. For scroll down options, use if statement to check if key = values.state and if so, it is 'selected' as the option.
-    d. 
+
+V. Accounts and authentication
+1. For provisioning accorunts and authorisation, create a 'accounts' app using
+   python manage.py startapp accounts
+2. Create a template for the accounts(register/login) page. Add 'accounts.apps.AccountsConfig' in settings.py for this new app.
+3. Create a urls.py in accounts folder and define the url patterns handled by the accounts page.
+4. Goto accounts->views.py to add the view methods for register, login, dashboard and logout.
+5. Go to jkre->urls.py to add accounts url and the file it should point to.
+6. Go to partials->navbar.html to point the register and login to correct urls like {% url 'register' % }
+7. Now add if else loop in navbar.html to hightlight register/login if the request is in that path (if they are in that page).
 
 
