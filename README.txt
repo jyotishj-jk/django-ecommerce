@@ -229,5 +229,8 @@ V. Accounts and authentication
 9. Change the form action to "{% url 'register/login' %}" and add method as "POST" to post the data in register/login.html
 10. When a post request is used in a form, we need to use a CSRF token (security precaution). To do so, add {% csrf_token %} beneath the form tag.
 11. To identify if the form request is 'post' or 'get', add if loop in the register and login methods in views.py.
-12. 
-
+12. Now to set message (alerts) like when pwd doesn't match, go to settings.py and add message tags (PS: Message config are already added in it)
+13. Create _alerts.html in partials and give the template and the if and for loops for the message(alerts) using bootstrap theme.
+14. Add messages.error() in views.py for the page you want to show the alert for.
+15. Now, inlcude the alerts.html in register & login.html
+16. 
