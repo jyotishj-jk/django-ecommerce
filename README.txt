@@ -233,4 +233,8 @@ V. Accounts and authentication
 13. Create _alerts.html in partials and give the template and the if and for loops for the message(alerts) using bootstrap theme.
 14. Add messages.error() in views.py for the page you want to show the alert for.
 15. Now, inlcude the alerts.html in register & login.html
-16. 
+16. Add post method in accounts->views.py for register to get the form values first name, last name etc.
+17. Check if passwords,user name and email match, else return an error message and redirect to register page
+18. Import User from django.contrib.auth.models for creating user name objects and to store it in DB
+19. Include _alerts.html in the index page so that the error is shown when the page is redirected from login/register to index page.
+20.
