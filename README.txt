@@ -237,4 +237,6 @@ V. Accounts and authentication
 17. Check if passwords,user name and email match, else return an error message and redirect to register page
 18. Import User from django.contrib.auth.models for creating user name objects and to store it in DB
 19. Include _alerts.html in the index page so that the error is shown when the page is redirected from login/register to index page.
-20.
+20. Now add the login methods in views.py by getting the username and password post request.
+21. Import auth module from django.contrib and use auth.authenticate if the username and password matches with any data in the db and redirect to dashboard.
+22. Else redirect to login page showing error 'Invalid credentials'.
